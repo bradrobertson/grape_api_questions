@@ -2,7 +2,7 @@ v1 = File.expand_path('v1', File.dirname(__FILE__))
 $: << v1 unless $:.include?(v1)
 
 module Api
-  class V1 < App
+  class V1 < Base
     version 'v1', using: :header, vendor: 'infl'
 
     require 'users'
@@ -14,7 +14,7 @@ module Api
     end
   end
 
-  class V2 < App
+  class V2 < Base
     version 'v2', using: :header, vendor: 'infl'
   end
 end

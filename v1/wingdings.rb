@@ -38,16 +38,17 @@ module Api
     end
 
 # ===================================
-
-    desc "another way of creating"
-    params do
-      # I can't get this to work at all
-      # Grape::Exceptions::UnknownValidator
-      # requires :all, using: Entities::WingdingParams.documentation
-      optional :all
-    end
-    # And finally, this route has :pagination and :something, :else params
-    post "/thangs" do
+    route_param :id do
+      desc "another way of creating"
+      params do
+        # I can't get this to work at all
+        # Grape::Exceptions::UnknownValidator
+        # requires :all, using: Entities::WingdingParams.documentation
+        optional :all
+      end
+      # And finally, this route has :pagination and :something, :else params
+      post "/thangs" do
+      end
     end
   end
 end
